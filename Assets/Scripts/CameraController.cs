@@ -7,7 +7,6 @@ public class CameraController : MonoBehaviour
 
     public static Vector2 CameraPos;
 
-
     // Update is called once per frame
     void Update()
     {
