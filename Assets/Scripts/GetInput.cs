@@ -10,9 +10,6 @@ public class GetInput : MonoBehaviour {
 
     public GameObject myo;
 
-    public float bicepsInput {get; private set;}
-    public float tricepsInput {get; private set;}
-
     private void Update() {
 
         ThalmicMyo thalmicMyo = myo.GetComponent<ThalmicMyo> ();
@@ -38,8 +35,7 @@ public class GetInput : MonoBehaviour {
 
         // Extend the unlock if ThalmcHub's locking policy is standard, and notifies the given myo that a user action was
         // recognized.
-        void ExtendUnlockAndNotifyUserAction (ThalmicMyo myo)
-        {
+        void ExtendUnlockAndNotifyUserAction (ThalmicMyo myo){
             ThalmicHub hub = ThalmicHub.instance;
 
             if (hub.lockingPolicy == LockingPolicy.Standard) {
@@ -50,5 +46,5 @@ public class GetInput : MonoBehaviour {
         }
         
     }
-    
+
 }
