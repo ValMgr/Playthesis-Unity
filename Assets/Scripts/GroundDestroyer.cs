@@ -14,8 +14,7 @@ public class GroundDestroyer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (UpWall.UpWallPos.y < transform.position.y)
-        {
+        if (UpWall.UpWallPos.y < transform.position.y){
            Destroy(gameObject);
         }
     }

@@ -42,7 +42,7 @@ public class SampleSceneGUI : MonoBehaviour
             // );
 
             GUI.Label(new Rect (12, 8, Screen.width, Screen.height),
-                "Test running ..."
+                "playing ..."
             );
         }
     }
