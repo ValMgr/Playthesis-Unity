@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LimitControl : MonoBehaviour
+public class CameraFollower : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()

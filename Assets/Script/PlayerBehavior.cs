@@ -33,7 +33,7 @@ public class PlayerBehavior : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-        if(other.tag == "CameraTrigger")
+        if (other.tag == "CameraTrigger")
         {
             CamCount++;
         }

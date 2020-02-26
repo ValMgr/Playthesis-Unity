@@ -15,7 +15,7 @@ public class WorldGen : MonoBehaviour
 
     private void Update()
     {
-        if(PlayerBehavior.CamCount % 10 - 6 == 0 && !FloorUsed.Contains(PlayerBehavior.CamCount))
+        if (PlayerBehavior.CamCount % 10 - 6 == 0 && !FloorUsed.Contains(PlayerBehavior.CamCount))
         {
             Gen();
         }
@@ -26,7 +26,7 @@ public class WorldGen : MonoBehaviour
         FloorUsed.Add(PlayerBehavior.CamCount);
         for (int i = -8; i < 2; i++)
         {
-            Instantiate(Ground, new Vector3(Random.Range(-2.2f , 2.2f), 2*(i - NbFloor) , 0), Quaternion.identity);
+            Instantiate(Ground, new Vector3(Random.Range(-2.2f, 2.2f), 3 * (i - NbFloor), 0), Quaternion.identity);
         }
         NbFloor += 10;
     }
