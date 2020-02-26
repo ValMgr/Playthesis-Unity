@@ -147,7 +147,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 29531610}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -3.631, y: -1.506, z: 0}
+  m_LocalPosition: {x: -3.6, y: -3, z: 0}
   m_LocalScale: {x: 2.7560003, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1086141849}
@@ -258,7 +258,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &275460101
 MonoBehaviour:
@@ -351,10 +351,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 569631406}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: -3, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1855883733}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &569631411
@@ -395,7 +395,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 686827040}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 3.619, y: -1.7220001, z: 0}
+  m_LocalPosition: {x: 3.6, y: -3, z: 0}
   m_LocalScale: {x: 2.7490003, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1086141849}
@@ -488,6 +488,7 @@ GameObject:
   - component: {fileID: 794617224}
   - component: {fileID: 794617226}
   - component: {fileID: 794617225}
+  - component: {fileID: 794617227}
   m_Layer: 0
   m_Name: Upwall
   m_TagString: Untagged
@@ -503,7 +504,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 794617223}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.019132257, y: 5.779235, z: 0}
+  m_LocalPosition: {x: 0, y: 6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1086141849}
@@ -585,6 +586,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &794617227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794617223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9d1b84e201d50843b03efa91d367b9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1086141848
 GameObject:
   m_ObjectHideFlags: 0
@@ -617,7 +630,7 @@ Transform:
   - {fileID: 29531611}
   - {fileID: 794617224}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1086141851
 MonoBehaviour:
@@ -628,7 +641,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1086141848}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 769bde30b5661ea478ce09eb3f82c6a1, type: 3}
+  m_Script: {fileID: 11500000, guid: c49cda350a209594c8c616405cfb7199, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1855883729
@@ -643,7 +656,6 @@ GameObject:
   - component: {fileID: 1855883732}
   - component: {fileID: 1855883731}
   - component: {fileID: 1855883730}
-  - component: {fileID: 1855883734}
   - component: {fileID: 1855883735}
   m_Layer: 0
   m_Name: Ball
@@ -747,28 +759,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1855883729}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5, z: 0}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 569631409}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1855883734
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1855883729}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39e51851431951d4d8cb9a75e68481d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MoveSpeed: 5
-  MaxSpeed: 5
-  rb2D: {fileID: 0}
-  VectorHorizontal: {x: 1, y: 0}
 --- !u!114 &1855883735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -781,5 +778,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58efa49c9e9765c46b734b492eab6aa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 5
-  MaxSpeed: 5
+  MoveSpeed: 10
+  MaxSpeed: 8
