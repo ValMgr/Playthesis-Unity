@@ -14,7 +14,6 @@ public class GetInput : MonoBehaviour {
 
         ThalmicMyo thalmicMyo = myo.GetComponent<ThalmicMyo> ();
 
-        // Vibrate the Myo armband when a fist is made.
         if (thalmicMyo.pose == Pose.Fist) {
             Debug.Log("Double contraction");
             ExtendUnlockAndNotifyUserAction (thalmicMyo);
@@ -46,5 +45,6 @@ public class GetInput : MonoBehaviour {
         }
         
     }
+
 
 }

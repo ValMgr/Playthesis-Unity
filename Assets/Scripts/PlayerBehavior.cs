@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using LockingPolicy = Thalmic.Myo.LockingPolicy;
+using Pose = Thalmic.Myo.Pose;
+using UnlockType = Thalmic.Myo.UnlockType;
+using VibrationType = Thalmic.Myo.VibrationType;
+
+
 public class PlayerBehavior : MonoBehaviour
 {
 
@@ -10,6 +16,9 @@ public class PlayerBehavior : MonoBehaviour
     public float MaxSpeed = 5f;
     private Vector2 VectorHorizontal = new Vector2(1.0f, 0.0f);
     public static int CamCount = 0;
+
+    public GameObject myo;
+
 
     // Start is called before the first frame update
     void Start()
@@ -21,16 +30,46 @@ public class PlayerBehavior : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.Q) && rb2D.velocity.x >= -MaxSpeed)
-        {
+        ThalmicMyo thalmicMyo = myo.GetComponent<ThalmicMyo> ();
+
+        // Keyboard Input
+        if(Input.GetKey(KeyCode.Q) && rb2D.velocity.x >= -MaxSpeed){
             rb2D.AddForce(VectorHorizontal * -MoveSpeed);
         }
-
-        if (Input.GetKey(KeyCode.D) && rb2D.velocity.x <= MaxSpeed)
-        {
+        if(Input.GetKey(KeyCode.D) && rb2D.velocity.x <= MaxSpeed){
             rb2D.AddForce(VectorHorizontal * MoveSpeed);
         }
+
+        //Myo armband Input
+       if (thalmicMyo.pose == Pose.WaveIn) {
+            Debug.Log("Biceps");
+            rb2D.AddForce(VectorHorizontal * -MoveSpeed);
+            ExtendUnlockAndNotifyUserAction (thalmicMyo);
+
+        } else if (thalmicMyo.pose == Pose.WaveOut) {
+            Debug.Log("Triceps");
+            rb2D.AddForce(VectorHorizontal * MoveSpeed);
+            ExtendUnlockAndNotifyUserAction (thalmicMyo);
+
+        }
+
+         // Extend the unlock if ThalmcHub's locking policy is standard, and notifies the given myo that a user action was
+        // recognized.
+        void ExtendUnlockAndNotifyUserAction (ThalmicMyo myo){
+            ThalmicHub hub = ThalmicHub.instance;
+
+            if (hub.lockingPolicy == LockingPolicy.Standard) {
+                myo.Unlock (UnlockType.Timed);
+            }
+
+            myo.NotifyUserAction ();
+        }
+
+
+
     }
+
+    
     private void OnTriggerExit2D(Collider2D other)
     {
         if(other.tag == "CameraTrigger")
