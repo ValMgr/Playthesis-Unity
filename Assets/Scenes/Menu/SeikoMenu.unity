@@ -543,7 +543,7 @@ GameObject:
   - component: {fileID: 385514135}
   - component: {fileID: 385514134}
   m_Layer: 5
-  m_Name: Score
+  m_Name: Text Comment Jouer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2148,12 +2148,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-    eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-    in culpa qui officia deserunt mollit anim id est laborum.
+  m_Text: "Dans ce jeu vous avez le contr\xF4le de Seiko, une \xE9toile filante cherchant
+    \xE0 rejoindre le sol. Vous devez l\u2019aider \xE0 traverser des branches :
+    \r\n\r\nBracelet au bras gauche : \r\n\nEn contractant votre BICEPS elle se d\xE9placera
+    \xE0 DROITE.\r\nAvec votre TRICEPS, elle ira \xE0 GAUCHE.\r\n\r\nBracelet au
+    bras droit : \r\n\nEn contractant votre BICEPS elle se d\xE9placera \xE0 GAUCHE.\r\nAvec
+    votre TRICEPS, elle ira \xE0 DROITE.\r\n\r\nBonne chance !\r\n"
 --- !u!222 &1452585758
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2541,7 +2541,7 @@ GameObject:
   - component: {fileID: 1648392840}
   - component: {fileID: 1648392839}
   m_Layer: 5
-  m_Name: MeilleurScore
+  m_Name: Comment jouer ?
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
