@@ -16,5 +16,19 @@ public class ScoreController : MonoBehaviour
     void Update()
     {
         Score.text = PlayerBehavior.CamCount.ToString();
+
+        if (Input.GetKeyDown(KeyCode.F1))
+        {
+            PlayerPrefs.DeleteAll();
+        }
+
+        if (PlayerPrefs.GetInt("ScoreSeiko",0) < PlayerBehavior.CamCount)
+        {
+            if (PlayerPrefs.HasKey("ScoreSeiko") == true)
+            {
+                PlayerPrefs.DeleteKey("ScoreSeiko");
+            }
+            PlayerPrefs.SetInt("ScoreSeiko", PlayerBehavior.CamCount);
+        }
     }
 }
