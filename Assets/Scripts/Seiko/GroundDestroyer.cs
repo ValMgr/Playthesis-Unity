@@ -4,16 +4,11 @@ using UnityEngine;
 
 public class GroundDestroyer : MonoBehaviour
 {
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
     void Update()
     {
+        //Destroy a floor if the floor is above the screen limit
+
         if (UpWall.UpWallPos.y < transform.position.y){
            Destroy(gameObject);
         }

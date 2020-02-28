@@ -12,11 +12,10 @@ public class PlayerBehavior : MonoBehaviour
 {
 
     private Rigidbody2D rb2D;
-    public float MoveSpeed = 5f;
-    public float MaxSpeed = 5f;
+    public float MoveSpeed = 5f; //The speed at which it accelerate
+    public float MaxSpeed = 5f; //The maximal speed of the player
     private Vector2 VectorHorizontal = new Vector2(1.0f, 0.0f);
-    public static int CamCount = 0;
-
+    public static int CamCount = 0; //Number of Floor the player went through for the camera
     public GameObject myo;
 
 
@@ -73,6 +72,7 @@ public class PlayerBehavior : MonoBehaviour
     
     private void OnTriggerExit2D(Collider2D other)
     {
+        //Each time the player passes between two plateform adds one to the number of floor
         if(other.tag == "CameraTrigger")
         {
             CamCount++;

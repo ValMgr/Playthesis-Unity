@@ -7,14 +7,15 @@ public class Menu : MonoBehaviour
 {
     private GameObject UICanvas;
     private GameObject UIStats;
-    private GameObject UIDidacticiel;
     // Start is called before the first frame update
     void Start()
     {
         UICanvas = GameObject.Find("Canvas");
         UIStats = GameObject.Find("Stats");
-        UIDidacticiel = GameObject.Find("UIDidacticiel");
     }
+
+
+    //Reset all player prefs (for resetting the score)
 
     private void Update()
     {
@@ -23,17 +24,20 @@ public class Menu : MonoBehaviour
             PlayerPrefs.DeleteAll();
         }
     }
+
+    //Change the Scene, scenename is set in the inspector
     public void Switch(string scenename)
     {
-        SceneManager.LoadScene(scenename, LoadSceneMode.Single);
+        SceneManager.LoadScene(scenename, LoadSceneMode.Single); 
     }
 
+    //On click show the page "Stats" of Seiko Menu
     public void StatsSeiko(bool click)
     {
 
         UICanvas.SetActive(click);
     } 
-    
+    //On click show the page "Comment Jouer ?" de Seiko
     public void DidacticielSeiko(bool click)
     {
 

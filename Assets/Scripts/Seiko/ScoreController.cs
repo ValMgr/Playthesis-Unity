@@ -15,12 +15,10 @@ public class ScoreController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Score.text = PlayerBehavior.CamCount.ToString();
 
-        if (Input.GetKeyDown(KeyCode.F1))
-        {
-            PlayerPrefs.DeleteAll();
-        }
+        // Script which set the Highest score of the player
+
+        Score.text = PlayerBehavior.CamCount.ToString();
 
         if (PlayerPrefs.GetInt("ScoreSeiko",0) < PlayerBehavior.CamCount)
         {

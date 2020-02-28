@@ -5,12 +5,11 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
 
-    public static Vector2 CameraPos;
+    public static Vector2 CameraPos;  //Camera's transform.position
 
-    // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(0, transform.position.y, -10);
+        transform.position = new Vector3(0, transform.position.y, -10); //Lock the x and z coordinates of the camera
         CameraPos = transform.position;
     }
 }

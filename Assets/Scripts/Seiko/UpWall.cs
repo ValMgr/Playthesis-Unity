@@ -5,11 +5,8 @@ using UnityEngine;
 public class UpWall : MonoBehaviour
 {
     public static Vector2 UpWallPos;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+
+    //Make the transform.position of the Upper Limit of th screen accessible to every script.
 
     // Update is called once per frame
     void Update()
