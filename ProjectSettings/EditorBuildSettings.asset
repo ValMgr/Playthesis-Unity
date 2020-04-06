@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Seiko.unity
     guid: fba0601dab2ae41418d4f810ea4e66cb
+  - enabled: 1
+    path: Assets/Scenes/FishingGame.unity
+    guid: 5561bbef0f09f644daac65b96601b473
   m_configObjects: {}

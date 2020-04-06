@@ -554,7 +554,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Se\xEFko"
+  m_Text: Fishing Game
 --- !u!222 &154276015
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -628,7 +628,7 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: SeikoMenu
+            m_StringArgument: FishingGame
             m_BoolArgument: 0
           m_CallState: 2
 --- !u!114 &558523670
@@ -1718,7 +1718,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1977580548}
   m_Layer: 0
-  m_Name: Game 2
+  m_Name: FishingGame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1733,7 +1733,7 @@ RectTransform:
   m_GameObject: {fileID: 1977580547}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 10}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 1.5000001, y: 1.5000001, z: 1}
   m_Children:
   - {fileID: 988274155}
   - {fileID: 558523668}
@@ -1742,7 +1742,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.7, y: 0.55}
   m_AnchorMax: {x: 0.7, y: 0.55}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.000076293945, y: 0}
   m_SizeDelta: {x: 160, y: 159}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2033129985
