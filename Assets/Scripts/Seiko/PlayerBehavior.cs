@@ -16,6 +16,7 @@ public class PlayerBehavior : MonoBehaviour
     public float MaxSpeed = 5f; //The maximal speed of the player
     private Vector2 VectorHorizontal = new Vector2(1.0f, 0.0f);
     public static int CamCount = 0; //Number of Floor the player went through for the camera
+
     public GameObject myo;
 
 
