@@ -11,7 +11,6 @@ public class HookBehaviour : MonoBehaviour
     {
         ImpulsStrength = RodBehaviour.ImpulseStrength;
         Rb = GetComponent<Rigidbody>();
-        Debug.Log("X:" + ImpulsDir.x + "Y:" + ImpulsDir.y + "Z:" + ImpulsDir.z);
         Rb.AddForce( ImpulsStrength * ImpulsDir, ForceMode.VelocityChange);
         
 
@@ -39,6 +38,6 @@ public class HookBehaviour : MonoBehaviour
 
     private void OnDestroy()
     {
-        RodBehaviour.IsBaitOn = false;
+        RodBehaviour.BaitState = 2;
     }
 }

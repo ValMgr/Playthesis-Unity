@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - CameraTrigger
+  - HookTrigger
+  - Fish
+  - Bait
   layers:
   - Default
   - TransparentFX

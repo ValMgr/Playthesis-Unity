@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RodBehaviour : MonoBehaviour
 {
-    public static bool IsBaitOn = false;
+    public static int BaitState = 0; // 0 : No Hook send, 1 : Hook Send, 2 : Bait on water
     public static float ImpulseStrength;
     public GameObject Hook;
     private GameObject RodTip;
@@ -20,6 +20,9 @@ public class RodBehaviour : MonoBehaviour
     public static Quaternion RodIncli;
     public GameObject Bait;
     public static GameObject GBait;
+    public int MaxBaitTime;
+    public static int GMaxBaitTime;
+
 
     private void Start()
     {
@@ -34,15 +37,37 @@ public class RodBehaviour : MonoBehaviour
     private void Update()
     {
 
+        MoveRod();
 
-        if (Input.GetKey(KeyCode.UpArrow) && PointTo.transform.position.y > -RodUpperLimit)
+        if (Input.GetKey(KeyCode.Z)) //Z To shoot (for now)
         {
-            PointTo.transform.position = PointTo.transform.position + new Vector3(0,-RodSpeed, 0)  ;
+            if (BaitState == 0)
+            {
+                ThrowBait();
+            }
         }
-        if (Input.GetKey(KeyCode.DownArrow) && PointTo.transform.position.y < RodLowerLimit)
+
+        if (Input.GetKey(KeyCode.X)) //Respawn Bait Provisoire
         {
-            PointTo.transform.position = PointTo.transform.position + new Vector3(0, RodSpeed, 0);
+            BaitState = 0;
         }
+
+    }
+
+    void ThrowBait()
+    {
+        ImpulseStrength = HookImpulseStrength;
+        GMaxBaitTime = MaxBaitTime;
+        RodIncli = transform.rotation;
+        Vector3 RodTipV = RodTip.transform.position;
+        BaitInitPos = new Vector3(RodTipV.x, RodTipV.y, RodTipV.z);
+        Instantiate(Hook, BaitInitPos, RodIncli);
+        BaitState = 1;
+    }
+
+    void MoveRod()
+    {
+
         if (Input.GetKey(KeyCode.RightArrow) && PointTo.transform.position.x > -RodRightLimit)
         {
             PointTo.transform.position = PointTo.transform.position + new Vector3(-RodSpeed, 0, 0);
@@ -53,29 +78,5 @@ public class RodBehaviour : MonoBehaviour
         }
 
         RodBase.transform.rotation = Quaternion.LookRotation(PointTo.transform.position - RodBase.transform.position);
-
-        if (Input.GetKey(KeyCode.Z)) //Z To shoot (for now)
-        {
-            if (!IsBaitOn)
-            {
-                ThrowBait();
-            }
-        }
-
-        if (Input.GetKey(KeyCode.X)) //Respawn Bait Provisoire
-        {
-            IsBaitOn = false;
-        }
-
-    }
-
-    void ThrowBait()
-    {
-        ImpulseStrength = HookImpulseStrength;
-        RodIncli = transform.rotation;
-        Vector3 RodTipV = RodTip.transform.position;
-        BaitInitPos = new Vector3(RodTipV.x, RodTipV.y, RodTipV.z);
-        Instantiate(Hook, BaitInitPos, RodIncli);
-        IsBaitOn = true;
     }
 }
