@@ -6,26 +6,52 @@ public class FishPlace : MonoBehaviour
 {
 
     public int SpawnNumber;
-    private Transform Fish;
-    public static int BaitFishNum;
+    public static List<int> BaitFishNum = new List<int>();
+    private int RdmFish = 0;
+    private int ActualFish = 0;
+    private bool FishOn = false;
 
     private void Start()
     {
-        Fish = gameObject.transform.Find("GameO");
-        Fish.gameObject.SetActive(false);
+        BaitFishNum.Add(SpawnNumber);
+        BaitFishNum.Add(ActualFish);
     }
 
     private void Update()
     {
         if (FishController.NumSqOn.Contains(SpawnNumber))
         {
-            Fish.gameObject.SetActive(true);
+            if (!FishOn)
+            {
+                FishOn = true;
+                RdmFish = Random.Range(0, 101);
+                if (RdmFish <= FishController.FishGoldP)
+                {
+                    ActualFish = 3;
+                    Instantiate(FishController.FishG, transform.position, Quaternion.identity, transform);
+                }
+                else if(RdmFish <= FishController.FishGoldP + FishController.FishRedP)
+                {
+                    ActualFish = 2;
+                    Instantiate(FishController.FishR, transform.position, Quaternion.identity, transform);
+                }
+                else
+                {
+                    ActualFish = 1;
+                    Instantiate(FishController.FishB, transform.position, Quaternion.identity, transform);            
+                }
+            }
 
         }
         else
         {
-            Fish.gameObject.SetActive(false);
-
+            RdmFish = 0;
+            FishOn = false;
+            int childs = transform.childCount;
+            for (int i = childs - 1; i >= 0; i--)
+            {
+                GameObject.Destroy(transform.GetChild(i).gameObject);
+            }
         }
     }
 
@@ -33,7 +59,12 @@ public class FishPlace : MonoBehaviour
     {
         if (other.gameObject.transform.tag == "Bait")
         {
-            BaitFishNum = SpawnNumber;
+
+            BaitFishNum.Clear();
+            BaitFishNum = new List<int>();
+            BaitFishNum.Add(SpawnNumber);
+            BaitFishNum.Add(ActualFish);
+
         }
     }
 

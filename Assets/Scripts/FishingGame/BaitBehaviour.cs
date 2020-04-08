@@ -16,7 +16,7 @@ public class BaitBehaviour : MonoBehaviour
         }
 
 
-        if (transform.position.y < -20)
+        if (transform.position.y < -20 || RodBehaviour.BaitState == 0)
         {
             Destroy(gameObject);
         }
@@ -32,12 +32,27 @@ public class BaitBehaviour : MonoBehaviour
             yield return new WaitForSecondsRealtime(0.001f);
             if (BaitIncr >= MaxBaitTime)
             {
-                if (OnFish && FishController.NumSqOn.Contains(FishPlace.BaitFishNum))
-                {
-                    ScoreFish.Score++;
-                    FishController.NumSqOn.Remove(FishPlace.BaitFishNum);
-                    FishPlace.BaitFishNum = 0;
+                if (OnFish && FishController.NumSqOn.Contains(FishPlace.BaitFishNum[0])) //Cette ligne renvoie parfois une ArgumentOutOfRangeException, j'arrive pas à trouver la raison,
+                {                                                                       // et le jeu fonctionne comme si l'erreur ne se produisait pas. Donc pour le moment ce bug n'est pas corrigé.
+                    switch (FishPlace.BaitFishNum[1])
+                    {
+                        case 1:
+                            ScoreFish.Score += FishController.FishBlueV;
+                            break;
+                        case 2:
+                            ScoreFish.Score += FishController.FishRedV;
+                            break;
+                        case 3:
+                            ScoreFish.Score += FishController.FishGoldV;
+                            break;
+                        default:
+                            break;
+                    }
+                    
+                    FishController.NumSqOn.Remove(FishPlace.BaitFishNum[0]);
+                    FishPlace.BaitFishNum.Clear();
                     Debug.Log(ScoreFish.Score);
+
                 }
                 Destroy(gameObject);
             }
