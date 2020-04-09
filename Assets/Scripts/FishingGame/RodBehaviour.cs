@@ -83,6 +83,7 @@ public class RodBehaviour : MonoBehaviour
         RodIncli = RodBase.transform.rotation;
         Instantiate(Hook, RodTip.transform.position, RodIncli);
         BaitState = 1;
+        AudioController.SoundToPlay = 1;
     }
 
     void MoveRod()

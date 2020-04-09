@@ -57,6 +57,7 @@ public class BaitBehaviour : MonoBehaviour
                     FishPlace.BaitFishNum.Clear();
 
                 }
+                AudioController.SoundToPlay = 3;
                 Destroy(gameObject);
             }
         }
@@ -68,6 +69,11 @@ public class BaitBehaviour : MonoBehaviour
         if(other.gameObject.tag == "Fish")
         {
             OnFish = true;
+            AudioController.SoundToPlay = 2;
+            if (FishController.NumSqOn.Contains(FishPlace.BaitFishNum[0]))
+            {
+                AudioController.SoundToPlay = 4;
+            }
         }
     }
 
