@@ -30,5 +30,5 @@ What things you need to install the software and how to install them
 ### Installing
 
 Download or copy repository, launch it from Unity then in Scenes Folder choose the game you want to try
-If you want to use a Myoarmband check if Myo1 gameobject is active
-If not desactive the object.
+ - If you want to use a Myoarmband check if Myo1 gameobject is active
+ - If not desactive the object.
