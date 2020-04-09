@@ -22,9 +22,9 @@ These instructions will get you a copy of the project up and running on your loc
 What things you need to install the software and how to install them
 
 
-Unity
-<a href="https://support.getmyo.com/hc/en-us/articles/360018409792-Myo-Connect-SDK-and-firmware-downloads">Myo SDK w/ Unity Package</a>
-<a href="https://support.getmyo.com/hc/en-us/articles/360018409792-Myo-Connect-SDK-and-firmware-downloads">Myo connect</a>
+ - Unity
+ - <a href="https://support.getmyo.com/hc/en-us/articles/360018409792-Myo-Connect-SDK-and-firmware-downloads">Myo SDK w/ Unity Package</a>
+ - <a href="https://support.getmyo.com/hc/en-us/articles/360018409792-Myo-Connect-SDK-and-firmware-downloads">Myo connect</a>
 
 
 ### Installing
