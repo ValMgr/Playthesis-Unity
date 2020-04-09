@@ -1,0 +1,171 @@
+fileFormatVersion: 2
+guid: 0d00194b97564614ba2769d3e43667d9
+ModelImporter:
+  serializedVersion: 19300
+  internalIDToNameTable:
+  - first:
+      74: 5706559936779179973
+    second: poisson|dorsal.001Action
+  - first:
+      74: -4946108414437317303
+    second: poisson|dorsalAction
+  - first:
+      74: -7717363659594416847
+    second: poisson|poissonAction
+  - first:
+      74: 3006971066046254303
+    second: poisson|Sphere.001Action
+  - first:
+      74: 6093863037225543507
+    second: poisson|Sphere.002Action
+  - first:
+      74: -7702541246007473904
+    second: dorsal|dorsal.001Action
+  - first:
+      74: 7242716068398576873
+    second: dorsal|dorsalAction
+  - first:
+      74: -2998223575271296705
+    second: dorsal|poissonAction
+  - first:
+      74: -9006763063460963664
+    second: dorsal|Sphere.001Action
+  - first:
+      74: -4655693134053095002
+    second: dorsal|Sphere.002Action
+  - first:
+      74: -1973464213920611906
+    second: dorsal.001|dorsal.001Action
+  - first:
+      74: -8943182199625608659
+    second: dorsal.001|dorsalAction
+  - first:
+      74: -3431823949302884742
+    second: dorsal.001|poissonAction
+  - first:
+      74: -2263935592610790649
+    second: dorsal.001|Sphere.001Action
+  - first:
+      74: 6099430456254088164
+    second: dorsal.001|Sphere.002Action
+  - first:
+      74: 7729977076452762712
+    second: Sphere.001|dorsal.001Action
+  - first:
+      74: 2367101668147132939
+    second: Sphere.001|dorsalAction
+  - first:
+      74: 8119757122067684741
+    second: Sphere.001|poissonAction
+  - first:
+      74: -3036527314473485615
+    second: Sphere.001|Sphere.001Action
+  - first:
+      74: -4436524472899874534
+    second: Sphere.001|Sphere.002Action
+  - first:
+      74: -8352628225015322153
+    second: Sphere.002|dorsal.001Action
+  - first:
+      74: 2328703634683270226
+    second: Sphere.002|dorsalAction
+  - first:
+      74: -9098843613720912701
+    second: Sphere.002|poissonAction
+  - first:
+      74: -5899806263776302030
+    second: Sphere.002|Sphere.001Action
+  - first:
+      74: 6260389476474903853
+    second: Sphere.002|Sphere.002Action
+  externalObjects: {}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class HookBehaviour : MonoBehaviour
 {
-    private Rigidbody Rb;
-    private Vector3 ImpulsDir = RodBehaviour.RodIncli * Vector3.up;
-    private float ImpulsStrength = RodBehaviour.ImpulseStrength;
+    /* SCRIPT CONTROLANT LE HOOK */
+
+
+    private Rigidbody Rb;                                                       //RigidBody du Hook
+    private Vector3 ImpulsDir = RodBehaviour.RodIncli * Vector3.up;             //Direction dans laquel est tiré le hook
+    private float ImpulsStrength;                                               //Force du tir
+
+
     private void Start()
     {
         ImpulsStrength = RodBehaviour.ImpulseStrength;
         Rb = GetComponent<Rigidbody>();
-        Rb.AddForce( ImpulsStrength * ImpulsDir, ForceMode.VelocityChange);
+        Rb.AddForce( ImpulsStrength * ImpulsDir, ForceMode.Impulse);
         
 
     }

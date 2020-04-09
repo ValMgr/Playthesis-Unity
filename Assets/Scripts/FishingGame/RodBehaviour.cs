@@ -4,24 +4,45 @@ using UnityEngine;
 
 public class RodBehaviour : MonoBehaviour
 {
+    /* SCRIPT CONTROLANT LA CANNE A PECHE */
+
+
+    /* Le Hook (Hamecon) est la boule envoyé lorsqu'on appuie sur Z, le Bait (Flotteur) est ce qui flotte sur l'eau */
+
+
     public static int BaitState = 0; // 0 : No Hook send, 1 : Hook Send, 2 : Bait on water
-    public static float ImpulseStrength;
-    public GameObject Hook;
-    private GameObject RodTip;
-    private GameObject RodBase;
-    private GameObject PointTo;
-    public float RodSpeed;
-    public float RodUpperLimit;
-    public float RodLowerLimit;
-    public float RodLeftLimit;
-    public float RodRightLimit;
+
+    //Force de l'impulsion
+    public static float ImpulseStrength; 
     public float HookImpulseStrength;
-    private Vector3 BaitInitPos;
-    public static Quaternion RodIncli;
-    public GameObject Bait;
-    public static GameObject GBait;
+
+    //Temps en millisecondes necessaire pour remonter le bait
     public int MaxBaitTime;
     public static int GMaxBaitTime;
+
+    //Prefab du bait
+    public GameObject Bait;
+    public static GameObject GBait;
+
+    //Prefab du Bait
+    public GameObject Hook; 
+
+
+    private GameObject RodTip;              //Bout supérieur de la canne à pêche, c'est de la que par le hook
+    private GameObject RodBase;             //Bas de la canne à pêche
+    private GameObject PointTo;             //Objet permettant le mouvement de la canne à pêche
+
+ 
+    public float RodSpeed;                  //Vitesse de la canne à pêche
+
+    public float RodUpperLimit;             //Limite supérieur du mouvement de la canne à pêche
+    public float RodLowerLimit;             //Limite supérieur du mouvement de la canne à pêche
+    public float RodLeftLimit;              //Limite supérieur du mouvement de la canne à pêche
+    public float RodRightLimit;             //Limite supérieur du mouvement de la canne à pêche
+
+    public static Quaternion RodIncli;      //Inclinaison de la canne à pêche
+
+
 
 
     private void Start()
@@ -39,11 +60,12 @@ public class RodBehaviour : MonoBehaviour
 
         MoveRod();
 
+
         if (Input.GetKey(KeyCode.Z)) //Z To shoot (for now)
         {
             if (BaitState == 0)
             {
-                ThrowBait();
+                ThrowHook();
             }
         }
 
@@ -54,14 +76,12 @@ public class RodBehaviour : MonoBehaviour
 
     }
 
-    void ThrowBait()
+    void ThrowHook()
     {
         ImpulseStrength = HookImpulseStrength;
         GMaxBaitTime = MaxBaitTime;
-        RodIncli = transform.rotation;
-        Vector3 RodTipV = RodTip.transform.position;
-        BaitInitPos = new Vector3(RodTipV.x, RodTipV.y, RodTipV.z);
-        Instantiate(Hook, BaitInitPos, RodIncli);
+        RodIncli = RodBase.transform.rotation;
+        Instantiate(Hook, RodTip.transform.position, RodIncli);
         BaitState = 1;
     }
 

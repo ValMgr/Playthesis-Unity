@@ -5,11 +5,13 @@ using UnityEngine;
 public class FishPlace : MonoBehaviour
 {
 
-    public int SpawnNumber;
-    public static List<int> BaitFishNum = new List<int>();
-    private int RdmFish = 0;
-    private int ActualFish = 0;
-    private bool FishOn = false;
+    public int SpawnNumber;                                             //Numéro de la plateforme de spawn
+    public static List<int> BaitFishNum = new List<int>();              //Liste contenant 2 informations : La plateforme de spawn sur laquel est le bait, 
+                                                                        //et le poisson présent sur cette plateforme
+
+    private int RdmFish = 0;                                            //Jet de proba sur 100
+    private int ActualFish = 0;                                         //Poisson choisi
+    private bool FishOn = false;                                        //Y a t'il déja un poisson d'apparu ?
 
     private void Start()
     {

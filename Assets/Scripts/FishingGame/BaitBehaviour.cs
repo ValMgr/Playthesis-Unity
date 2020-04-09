@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class BaitBehaviour : MonoBehaviour
 {
-    private int MaxBaitTime = RodBehaviour.GMaxBaitTime;
-    private int BaitIncr = 0;
-    private bool OnFish = false;
-    private bool WaitOn = false;
+
+    /* SCRIPT CONTROLANT LE BAIT */
+
+
+    private int MaxBaitTime = RodBehaviour.GMaxBaitTime;    //Temps necessaire pour remonter le bait
+    private int BaitIncr = 0;                               //valeur augmentant de 1 en 1 toute les 0.001s quand la touche A est enfoncé
+    private bool OnFish = false;                            //Le Bait est il sur une zone avec un poisson ?
+    private bool WaitOn = false;                            //la coroutine est elle déjà lancé ?
     private void Update()
     {
         if (!WaitOn)
@@ -51,7 +55,6 @@ public class BaitBehaviour : MonoBehaviour
                     
                     FishController.NumSqOn.Remove(FishPlace.BaitFishNum[0]);
                     FishPlace.BaitFishNum.Clear();
-                    Debug.Log(ScoreFish.Score);
 
                 }
                 Destroy(gameObject);
