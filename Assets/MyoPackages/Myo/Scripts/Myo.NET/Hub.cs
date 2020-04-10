@@ -7,6 +7,9 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 
+#if UNITY_STANDALONE || UNITY_EDITOR || UNITY_ANDROID || WIN64 || WIN32
+
+
 namespace Thalmic.Myo
 {
     public class Hub : IDisposable
@@ -136,3 +139,5 @@ namespace Thalmic.Myo
         Standard
     }
 }
+
+#endif

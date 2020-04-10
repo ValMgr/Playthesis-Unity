@@ -4,6 +4,9 @@
 using UnityEditor;
 #endif
 
+#if UNITY_STANDALONE || UNITY_EDITOR || UNITY_ANDROID || WIN64 || WIN32
+
+
 using System.Collections.Generic;
 
 using LockingPolicy = Thalmic.Myo.LockingPolicy;
@@ -157,3 +160,5 @@ public class ThalmicHub : MonoBehaviour
 
     private List<ThalmicMyo> _myos = new List<ThalmicMyo>();
 }
+
+#endif

@@ -4,6 +4,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 
+#if UNITY_STANDALONE || UNITY_EDITOR || UNITY_ANDROID || WIN64 || WIN32
+
+
 namespace Thalmic.Myo
 {
     public class Vector3
@@ -88,3 +91,5 @@ namespace Thalmic.Myo
         }
     }
 }
+
+#endif

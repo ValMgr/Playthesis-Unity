@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+#if UNITY_STANDALONE || UNITY_EDITOR || UNITY_ANDROID || WIN64 || WIN32
+
+
 namespace Thalmic.Myo
 {
     public enum Pose
@@ -16,3 +19,6 @@ namespace Thalmic.Myo
         Unknown = libmyo.PoseType.Unknown
     }
 }
+
+
+#endif

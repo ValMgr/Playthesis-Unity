@@ -4,6 +4,8 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 
+#if UNITY_STANDALONE || UNITY_EDITOR || UNITY_ANDROID || WIN64 || WIN32
+
 namespace Thalmic.Myo
 {
     internal static class libmyo
@@ -17,6 +19,8 @@ namespace Thalmic.Myo
 #elif WIN32
         private const string MYO_DLL = "myo32.dll";
 #endif
+
+
 
         public enum Result
         {
@@ -228,3 +232,5 @@ namespace Thalmic.Myo
         public static extern Result run(IntPtr hub, uint durationMs, Handler handler, IntPtr userData, IntPtr error);
     }
 }
+
+#endif

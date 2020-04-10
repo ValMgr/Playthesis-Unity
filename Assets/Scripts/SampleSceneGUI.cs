@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+#if UNITY_STANDALONE || UNITY_EDITOR || UNITY_ANDROID || WIN64 || WIN32
+
+
 // Draw simple instructions for sample scene.
 // Check to see if a Myo armband is paired.
 public class SampleSceneGUI : MonoBehaviour
@@ -56,3 +59,5 @@ public class SampleSceneGUI : MonoBehaviour
         }
     }
 }
+
+#endif
