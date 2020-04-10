@@ -1,6 +1,9 @@
 using UnityEngine;
 using System.Collections;
 
+#if UNITY_STANDALONE || UNITY_EDITOR || UNITY_ANDROID || WIN64 || WIN32
+
+
 using LockingPolicy = Thalmic.Myo.LockingPolicy;
 using Pose = Thalmic.Myo.Pose;
 using UnlockType = Thalmic.Myo.UnlockType;
@@ -48,3 +51,5 @@ public class GetInput : MonoBehaviour {
 
 
 }
+
+#endif

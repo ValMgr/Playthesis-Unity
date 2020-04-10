@@ -4,6 +4,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 
+#if UNITY_STANDALONE || UNITY_EDITOR || UNITY_ANDROID || WIN64 || WIN32
+
+
 namespace Thalmic.Myo
 {
     public class Myo
@@ -200,3 +203,5 @@ namespace Thalmic.Myo
         Hold = 1    ///< Unlock until explicitly told to re-lock.
     }
 }
+
+#endif

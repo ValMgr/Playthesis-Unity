@@ -2,11 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+#if UNITY_STANDALONE || UNITY_EDITOR || UNITY_ANDROID || WIN64 || WIN32
+
+
 using LockingPolicy = Thalmic.Myo.LockingPolicy;
 using Pose = Thalmic.Myo.Pose;
 using UnlockType = Thalmic.Myo.UnlockType;
 using VibrationType = Thalmic.Myo.VibrationType;
 
+
+#endif
 
 public class PlayerBehavior : MonoBehaviour
 {
@@ -31,7 +36,10 @@ public class PlayerBehavior : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        ThalmicMyo thalmicMyo = myo.GetComponent<ThalmicMyo> ();
+
+        #if UNITY_STANDALONE || UNITY_EDITOR || UNITY_ANDROID || WIN64 || WIN32
+            ThalmicMyo thalmicMyo = myo.GetComponent<ThalmicMyo> ();
+        #endif
 
         // Keyboard Input
         if(Input.GetKey(KeyCode.Q) && rb2D.velocity.x >= -MaxSpeed){
@@ -41,8 +49,10 @@ public class PlayerBehavior : MonoBehaviour
             rb2D.AddForce(VectorHorizontal * MoveSpeed);
         }
 
+
+        #if UNITY_STANDALONE || UNITY_EDITOR || UNITY_ANDROID || WIN64 || WIN32
         //Myo armband Input
-       if (thalmicMyo.pose == Pose.WaveIn) {
+        if (thalmicMyo.pose == Pose.WaveIn) {
             Debug.Log("Biceps");
             rb2D.AddForce(VectorHorizontal * -MoveSpeed);
             ExtendUnlockAndNotifyUserAction (thalmicMyo);
@@ -54,7 +64,8 @@ public class PlayerBehavior : MonoBehaviour
 
         }
 
-         // Extend the unlock if ThalmcHub's locking policy is standard, and notifies the given myo that a user action was
+
+        // Extend the unlock if ThalmcHub's locking policy is standard, and notifies the given myo that a user action was
         // recognized.
         void ExtendUnlockAndNotifyUserAction (ThalmicMyo myo){
             ThalmicHub hub = ThalmicHub.instance;
@@ -66,7 +77,7 @@ public class PlayerBehavior : MonoBehaviour
             myo.NotifyUserAction ();
         }
 
-
+        #endif
 
     }
 

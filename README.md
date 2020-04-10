@@ -26,6 +26,8 @@ What things you need to install the software and how to install them
  - <a href="https://support.getmyo.com/hc/en-us/articles/360018409792-Myo-Connect-SDK-and-firmware-downloads">Myo SDK w/ Unity Package</a>
  - <a href="https://support.getmyo.com/hc/en-us/articles/360018409792-Myo-Connect-SDK-and-firmware-downloads">Myo connect</a>
 
+You need to calibrate Myoarmband with your own muscle
+
 
 ### Installing
 

@@ -5,16 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Menu/Menu.unity
     guid: 0b6ada9bf02965e409c4f06d368f73ef
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Menu/SeikoMenu.unity
     guid: 8cba713314112d743a55f3e73de7da9b
   - enabled: 1
     path: Assets/Scenes/Seiko.unity
     guid: fba0601dab2ae41418d4f810ea4e66cb
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/FishingGame.unity
     guid: 5561bbef0f09f644daac65b96601b473
   m_configObjects: {}
