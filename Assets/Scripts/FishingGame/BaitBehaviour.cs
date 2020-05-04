@@ -12,6 +12,17 @@ public class BaitBehaviour : MonoBehaviour
     private int BaitIncr = 0;                               //valeur augmentant de 1 en 1 toute les 0.001s quand la touche A est enfoncé
     private bool OnFish = false;                            //Le Bait est il sur une zone avec un poisson ?
     private bool WaitOn = false;                            //la coroutine est elle déjà lancé ?
+    private Light FishSignal;
+    public Color FishSignalHit;
+    public Color FishSignalMiss;
+
+
+
+    private void Start()
+    {
+        FishSignal = GetComponent<Light>();
+    }
+
     private void Update()
     {
         if (!WaitOn)
@@ -73,6 +84,11 @@ public class BaitBehaviour : MonoBehaviour
             if (FishController.NumSqOn.Contains(FishPlace.BaitFishNum[0]))
             {
                 AudioController.SoundToPlay = 4;
+                FishSignal.color = FishSignalHit;
+            }
+            else
+            {
+                FishSignal.color = FishSignalMiss;
             }
         }
     }
