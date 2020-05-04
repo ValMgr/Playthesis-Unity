@@ -12,7 +12,7 @@ public class FollowingBall : MonoBehaviour
     void Update(){
         //Lock the x and z coordinates of the object and follow y pos of target
         // 5f on y axis is offset to keep ball to the top of the screen
-        transform.position = new Vector3(0, target.transform.position.y -5f, 0); 
+        transform.position = new Vector3(0, target.transform.position.y -5f, -10); 
         pos = transform.position;
     }
 }
