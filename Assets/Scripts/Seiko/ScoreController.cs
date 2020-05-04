@@ -17,16 +17,15 @@ public class ScoreController : MonoBehaviour
     {
 
         // Script which set the Highest score of the player
+        Score.text = PlayerBehavior.score.ToString();
 
-        Score.text = PlayerBehavior.CamCount.ToString();
-
-        if (PlayerPrefs.GetInt("ScoreSeiko",0) < PlayerBehavior.CamCount)
+        if (PlayerPrefs.GetInt("ScoreSeiko",0) < PlayerBehavior.score)
         {
             if (PlayerPrefs.HasKey("ScoreSeiko") == true)
             {
                 PlayerPrefs.DeleteKey("ScoreSeiko");
             }
-            PlayerPrefs.SetInt("ScoreSeiko", PlayerBehavior.CamCount);
+            PlayerPrefs.SetInt("ScoreSeiko", PlayerBehavior.score);
         }
     }
 }
