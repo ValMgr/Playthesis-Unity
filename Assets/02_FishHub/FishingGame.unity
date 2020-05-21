@@ -260,6 +260,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1390447970}
     m_Modifications:
+    - target: {fileID: -5568601135385891754, guid: eda39542cc788b14aa329270f9379564,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: -5259225927154676129, guid: eda39542cc788b14aa329270f9379564,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: eda39542cc788b14aa329270f9379564,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -335,6 +345,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: ponton
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: eda39542cc788b14aa329270f9379564,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 707987222566382496, guid: eda39542cc788b14aa329270f9379564,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eda39542cc788b14aa329270f9379564, type: 3}
 --- !u!1 &302020538
@@ -349,6 +369,7 @@ GameObject:
   - component: {fileID: 302020540}
   - component: {fileID: 302020539}
   - component: {fileID: 302020543}
+  - component: {fileID: 302020542}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -422,6 +443,66 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 5.572, y: 0, z: 0}
+--- !u!114 &302020542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 302020538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 302020541}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 1552
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!114 &302020543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -934,7 +1015,7 @@ GameObject:
   - component: {fileID: 890227403}
   - component: {fileID: 890227405}
   - component: {fileID: 890227404}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Terrain0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1663,7 +1744,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 0}
+  sharedProfile: {fileID: 11400000, guid: 2e4d1b1f9719a4246b48519231c188c0, type: 2}
   isGlobal: 1
   blendDistance: 0
   weight: 1
