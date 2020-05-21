@@ -7,13 +7,15 @@ Playthesis provides severals mini-games.Eeach of them allow the patient to re-ed
 
 Seiko is a mini-game which consists in guiding a fireball across branches. It is an endless game, the aim is to make the biggest score. No chrono, no stress. The ball go from the left to the right, due to biceps contractions. 
 https://www.playthesis.fr/Games/Seïko.html
-Source code => Assets/Scripts/Seïko
+
+Source code => Assets/01_Seïko/Scripts
 
 ## Fish Hub
 
 Fish Hub is a fishing game. The aim is to launch the fishing rod in the lake where fish are, in order to catch them. 
-https://www.playthesis.fr/Games/FishHub.html
-Source code => Assets/Scripts/FishingGame
+https://www.playthesis.fr/Games/FishHub.html 
+
+Source code => Assets/02_FishHub/Scripts
 
 ### Getting Started
 
