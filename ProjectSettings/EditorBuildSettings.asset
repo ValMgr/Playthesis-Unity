@@ -11,10 +11,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Menu/SeikoMenu.unity
     guid: 8cba713314112d743a55f3e73de7da9b
-  - enabled: 1
+  - enabled: 0
     path: "Assets/01_Se\xEFko/Seiko.unity"
     guid: fba0601dab2ae41418d4f810ea4e66cb
-  - enabled: 0
+  - enabled: 1
     path: Assets/02_FishHub/FishingGame.unity
     guid: 5561bbef0f09f644daac65b96601b473
   m_configObjects: {}

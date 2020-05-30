@@ -1,29 +1,50 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+
+namespace FishHub {
 public class FishBehaviour : MonoBehaviour {
     
-
+    // Group: Variables
     private FishManager FishManager;
-
-
-    private bool hasTarget = false;
-    private bool isTurning = false;
-
-    private Vector3 currentWP;
-    private Vector3 lastWP;
-
     [SerializeField]
     [Range(0f, 10f)]
     private float speed = 2f;
-    public int value;
+
+    // Group: Waypoints variables
+    private Vector3 currentWP;
+    private Vector3 lastWP;
+    // Group: State variables
     private bool baited;
     private bool hooked;
+    private bool hasTarget = false;
+    private bool isTurning = false;
 
-    // Get FishManager script
+    // Group: Fish properties
+    public int value {get; private set;}
+    public float fTime {get; private set;}
+
+
+
+    // Group: Functions
+
+    /*  Function: Start
+    
+        Find FishManager component
+    */
     private void Start() {
         FishManager = transform.parent.transform.parent.GetComponent<FishManager>();
     }
+
+
+    /*  Function: Update
+
+        Looking for waypoints.
+        Detect if waypoints reached.
+
+        See Also:
+            <FindTarget>
+    */
 
     private void Update() {
 
@@ -41,7 +62,7 @@ public class FishBehaviour : MonoBehaviour {
         if(transform.position == currentWP && !baited){
             hasTarget = false;
         }
-        // if hook reached call Fishing method from HookBehaviour scripts
+        // If hook reached call Fishing method from HookBehaviour scripts
         if(transform.position == currentWP && baited){
            
             if(!hooked){
@@ -52,8 +73,19 @@ public class FishBehaviour : MonoBehaviour {
     }
 
 
-    // Find a new random position and give a random speed
-    // RandomPosition is a public method from FishManager.cs
+    /* Function: FindTarget
+
+        Find a new random position and give a random speed.
+         
+        Parameters:
+
+        start - Minimum Speed.
+        end - Maximum Speed.
+
+        Returns:
+            Boolean if target acquired.
+
+     */
     private bool FindTarget(float start = 1f, float end = 5f){
         currentWP = FishManager.RandomPosition();
         if(lastWP == currentWP){
@@ -68,7 +100,17 @@ public class FishBehaviour : MonoBehaviour {
 
     }
 
-    // Rotate fish to lookat wp when swimming toward it
+    /* Function: RotateFish
+
+        Rotate fish to look at current waypoint.
+         
+        Parameters:
+
+        waypoint - Position to reach.
+        currentspeed - Speed.
+
+
+     */
     private void RotateFish(Vector3 waypoint, float currentspeed){
 
         float RotSpeed = currentspeed * Random.Range(1f, 3f);
@@ -77,18 +119,46 @@ public class FishBehaviour : MonoBehaviour {
 
     }
 
-    // method call from HookBehaviour script, give hook gameobject as new wp
+      /* Function: Baited
+
+        Change current waypoint with Hook position.
+         
+        Parameters:
+
+        HookPosition - Hook Vector3 position.
+
+     */
     public void Baited(Vector3 HookPosition){
         currentWP = new Vector3(HookPosition.x, HookPosition.y -.25f, HookPosition.z);
         speed = Random.Range(0.5f, 1.5f);
         baited = true;
     }
 
-    // public method call from HookBehaviour script to release fish and get new wp if hooking failed
+    // Function: ReleaseFish
+    // Release baited fish       
     public void ReleaseFish(){
         hooked = false;
         hasTarget = false;
         baited = false;
     }
+
+    /* Function: SetValue
+
+        Set values defined by fish groups.
+     
+        Parameters:
+     
+        fishValue - fish's score value .
+        fishTime - max time to fish this one.
+     
+     */
+    public void SetValue(int fishValue, float fishTime){
+        value = fishValue;
+        fTime = fishTime;
+    }
+
+
+
+}
 
 }

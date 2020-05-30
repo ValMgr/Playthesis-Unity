@@ -134,6 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetArea: 2
+  failTime: 3
 --- !u!64 &580097096129392921
 MeshCollider:
   m_ObjectHideFlags: 0

@@ -4,22 +4,30 @@ using UnityEngine;
 using System.Linq;
 
 
+namespace FishHub {
 public class HookBehaviour : MonoBehaviour{
     
-    private bool hasTarget;
+   
+    // Group: Variables
     [SerializeField]
     [Range(0f, 20f)]
     private float targetArea;
-    private Transform[] Fishs;
-    private bool onWater;
-    private RodBehaviour RodBehaviour;
-    private bool catching = false;
     private IEnumerator co;
+
+
+    // Group: State Variables
+    private bool onWater;
+    private bool hasTarget;
+    private bool catching = false;
+
+    // Group: GameObject Variables
+    private Transform[] Fishs;
+    private RodBehaviour RodBehaviour;
     private AudioController Audio;
     private Transform Target;
     private ScoreManager score;
                                   
-
+    // Group: Functions
     private void Start(){
         RodBehaviour = GameObject.Find("Rod").GetComponent<RodBehaviour>();
         Audio = GameObject.Find("AudioController").GetComponent<AudioController>();
@@ -41,7 +49,7 @@ public class HookBehaviour : MonoBehaviour{
 
         // Input to catch fish
         // call end coroutines with a "succes" arguments
-        if(catching && Input.GetKeyDown(KeyCode.S)){
+        if(catching && Input.GetKeyDown(KeyCode.Z)){
                 StopCoroutine(co);
                 StartCoroutine(ResetHook(true));
 
@@ -50,8 +58,12 @@ public class HookBehaviour : MonoBehaviour{
     }
 
 
-    // Waiting for target
-    // Looking distance with each fish, if one is in the hook area he become target
+      /* Function: FindTarget
+
+        Bait closest fish.
+
+
+     */
     private void FindTarget(){
         GetFish();
         for(int i=0;i<Fishs.Length;i++){
@@ -65,12 +77,26 @@ public class HookBehaviour : MonoBehaviour{
     }
 
 
-    // Get All fish positions
+     /* Function: GetFish
+
+        Get all Fish gameobjects in scene.
+
+        LINQ:
+        --- Code
+        GetComponentsInChildren<Transform>().Where(c => c.gameObject.tag == "Fish").ToArray();
+        ---
+        See Also: <System.Linq: https://unity3d.college/2017/07/01/linq-unity-developers/>
+
+     */
     private void GetFish(){
         Fishs = GameObject.Find("FishManager").GetComponentsInChildren<Transform>().Where(c => c.gameObject.tag == "Fish").ToArray();
     }
 
-    // Detect when hook hit water and set ready state to up
+    /* Function: OnTriggerEnter
+
+        Detect when hook hit water and set ready state to up
+
+     */
     private void OnTriggerEnter(Collider other) {
        if(other.name == "Water"){
            onWater = true;
@@ -79,15 +105,23 @@ public class HookBehaviour : MonoBehaviour{
        }
     }
 
-    // Public method call by FishBehaviour and start needed coroutines
+     /* Function: Fishing
+
+        Public method call by FishBehaviour and start needed coroutines
+
+     */
     public void Fishing(){
         co = BaitFish();
         StartCoroutine(co);
     }
 
-    // Coroutines when a fish has been hook
-    // 5s Timer before call end coroutines with a "failed" argument
-    // and change rod light to blue
+      /* Function: BaitFish
+
+        // Coroutines when a fish has been hook
+            // 5s Timer before call end coroutines with a "failed" argument
+            // and change rod light to blue
+     */
+   
     private IEnumerator BaitFish(){
 
         catching = true;
@@ -95,7 +129,7 @@ public class HookBehaviour : MonoBehaviour{
             item.material = RodBehaviour.LightMat[1];
         }
 
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(Target.GetComponent<FishBehaviour>().fTime);
         StartCoroutine(ResetHook(false));
         
 
@@ -130,4 +164,5 @@ public class HookBehaviour : MonoBehaviour{
         }
     }
 
+    }
 }

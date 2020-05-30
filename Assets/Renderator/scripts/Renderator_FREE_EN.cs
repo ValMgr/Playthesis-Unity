@@ -1,7 +1,9 @@
-﻿using UnityEngine;
+﻿#if UNITY_EDITOR
+using UnityEngine;
 using System.Collections;
 using System.IO;
 using UnityEditor;
+
 
 [RequireComponent(typeof(Camera))]
 public class Renderator_FREE_EN : MonoBehaviour {
@@ -68,3 +70,5 @@ public class Renderator_FREE_EN : MonoBehaviour {
 		}
 	}
 }
+
+#endif

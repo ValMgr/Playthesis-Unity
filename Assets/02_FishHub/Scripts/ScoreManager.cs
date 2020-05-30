@@ -3,6 +3,8 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
+
+namespace FishHub {
 public class ScoreManager : MonoBehaviour {
 
     private int score;
@@ -21,4 +23,6 @@ public class ScoreManager : MonoBehaviour {
         UpdateScore();
     }
     
+}
+
 }

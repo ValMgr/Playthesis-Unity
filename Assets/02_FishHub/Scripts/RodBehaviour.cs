@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
+namespace FishHub {
+
 public class RodBehaviour : MonoBehaviour{
 
     public static bool BaitState {get; private set;} = false;
@@ -106,3 +108,4 @@ public class RodBehaviour : MonoBehaviour{
 
 }
 
+}

@@ -1,5 +1,6 @@
 using UnityEngine;
 
+namespace FishHub {
 public class FishLine : MonoBehaviour {
     
 
@@ -15,7 +16,11 @@ public class FishLine : MonoBehaviour {
         lineRenderer.SetPosition(0, Rod.transform.position);
     }
     
-    // Give start & end position of fish line then draw it
+    /*  Function: Update
+    
+        Set lineRenderer's position 0 at Hook's position
+        and position 1 at top of the fish rod
+    */
     private void Update() {
         if(RodBehaviour.BaitState){
             lineRenderer.SetPosition(0, Rod.transform.position);
@@ -27,8 +32,15 @@ public class FishLine : MonoBehaviour {
         }
     }
 
+
+    /*  Function: SetHook
+    
+        Find Hook gameobject
+    */
     public void SetHook(){
         Hook = GameObject.Find("TopTorus");
     }
+
+}
 
 }

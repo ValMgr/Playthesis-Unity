@@ -1558,6 +1558,7 @@ MonoBehaviour:
     m_maxAI: 6
     m_spawnAmount: 1
     m_scoreValue: 1
+    m_fishTime: 3.5
     m_randomizeStats: 0
     m_enableSpawner: 1
   - m_GroupeName: BlueFish
@@ -1566,6 +1567,7 @@ MonoBehaviour:
     m_maxAI: 3
     m_spawnAmount: 1
     m_scoreValue: 3
+    m_fishTime: 2.5
     m_randomizeStats: 0
     m_enableSpawner: 1
   - m_GroupeName: GoldFish
@@ -1574,6 +1576,7 @@ MonoBehaviour:
     m_maxAI: 1
     m_spawnAmount: 1
     m_scoreValue: 5
+    m_fishTime: 1.7
     m_randomizeStats: 0
     m_enableSpawner: 1
 --- !u!4 &1357083775
