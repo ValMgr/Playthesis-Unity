@@ -11,6 +11,7 @@ using Pose = Thalmic.Myo.Pose;
 using UnlockType = Thalmic.Myo.UnlockType;
 
 
+namespace Thalmic.Myo{
 
 // Represents a Myo armband. Myo's orientation is made available through transform.localRotation, and other properties
 // like the current pose are provided explicitly below. All spatial data about Myo is provided following Unity
@@ -182,6 +183,7 @@ public class ThalmicMyo : MonoBehaviour {
     private bool _myoUnlocked = false;
 
     private Thalmic.Myo.Myo _myo;
+}
 }
 
 #endif

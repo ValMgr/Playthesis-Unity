@@ -7,7 +7,10 @@ namespace FishHub {
 
 public class RodBehaviour : MonoBehaviour{
 
+    // Group: State Variables
     public static bool BaitState {get; private set;} = false;
+
+    // Group: Rod Settings
     [SerializeField]
     [Range(0f, 10f)]
     private float ThrowingStrength;
@@ -25,16 +28,21 @@ public class RodBehaviour : MonoBehaviour{
     private float RightLimit;
 
     [SerializeField]
+
+    // Group: GameObjects Variables
     private GameObject Hook;
 
     // Rod's target managing position (Rod looking at the gameobject and we're moving this gameobject)          
     private GameObject PointTo;             
     private AudioController Audio;
 
+    // Group: Light Management
     public Renderer[] LightPart;
     public Material[] LightMat;
 
 
+
+    // Group: Functions
     private void Awake(){
         PointTo = GameObject.Find("PointTo");
         Audio = GameObject.Find("AudioController").GetComponent<AudioController>();
@@ -61,10 +69,14 @@ public class RodBehaviour : MonoBehaviour{
 
     }
 
+    /* Function: ThrowHook
 
-    // Throw hook from fishrod
-    // get rod's extremity to calculate direction and instantiate new hook
-    // Then create a fish ligne between rod and hook and play sound corresponding
+        Throw hook from fishrod.
+        Get rod's extremity to calculate direction and instantiate new hook.
+
+        Then create a <fish line: FishLine> between rod and hook and play sound corresponding.
+       
+     */
     private void ThrowHook(){
         // Get rod's higher point => Position from where the hook is launched
         Vector3 TopPosition = GameObject.Find("RodTop").transform.position;
@@ -79,9 +91,11 @@ public class RodBehaviour : MonoBehaviour{
     }
 
     
+    /* Function: MoveRod
 
-    // Mooving rod on Horizontal axis
-    // Mooving PoinTo gameObject and rod looking at it
+        Mooving rod on Horizontal axis.
+        Mooving PoinTo gameObject and rod looking at it.
+    */
     private void MoveRod(){
 
         if (Input.GetAxis("Horizontal") > 0 && PointTo.transform.position.x < RightLimit){
@@ -94,8 +108,10 @@ public class RodBehaviour : MonoBehaviour{
         this.transform.rotation = Quaternion.LookRotation(PointTo.transform.position - this.transform.position);
     }
 
+    /* Function: ResetHook
 
-    // Delete hook, play sound correspondig then reset rod's light
+        Delete hook, play sound correspondig then reset rod's light
+    */
     public void ResetHook(){
         BaitState = false;
         Audio.PlaySound(Audio.OutOfWater);

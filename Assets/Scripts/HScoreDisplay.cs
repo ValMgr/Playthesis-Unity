@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+namespace Playthesis{
 public class HScoreDisplay : MonoBehaviour
 {
     private Text Score;
@@ -21,4 +22,5 @@ public class HScoreDisplay : MonoBehaviour
         //Display the high Score of the player.
         Score.text = PlayerPrefs.GetInt("ScoreSeiko", 0).ToString();
     }
+}
 }

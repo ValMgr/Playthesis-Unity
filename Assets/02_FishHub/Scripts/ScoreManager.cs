@@ -18,6 +18,15 @@ public class ScoreManager : MonoBehaviour {
         scoreLabel.text = score.ToString();
     }
 
+    /* Function: AddScore
+
+        Add fish's score to global score
+
+        Parameters:
+
+            value - Fish's value
+
+     */
     public void AddScore(int value){
         score += value;
         UpdateScore();

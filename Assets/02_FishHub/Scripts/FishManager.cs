@@ -166,7 +166,7 @@ public class FishManager : MonoBehaviour {
         }
     }
 
-     /*  Function: CreateAIGroup
+    /*  Function: CreateAIGroup
         
         Create Fish groups gameobect
     */

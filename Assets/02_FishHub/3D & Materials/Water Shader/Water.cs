@@ -13,6 +13,7 @@ using UnityEngine;
 
 [ExecuteInEditMode] // For DepthTextureMode
 
+namespace FishHub{
 
 public class Water : MonoBehaviour
 {
@@ -79,4 +80,5 @@ public class Water : MonoBehaviour
 
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+}
 }

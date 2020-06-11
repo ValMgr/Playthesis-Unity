@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+namespace Playthesis{
 public class Menu : MonoBehaviour
 {
     private GameObject UICanvas;
@@ -47,4 +48,5 @@ public class Menu : MonoBehaviour
     }
 
 
+}
 }

@@ -13,8 +13,8 @@ using VibrationType = Thalmic.Myo.VibrationType;
 
 #endif
 
-public class PlayerBehavior : MonoBehaviour
-{
+namespace Seiko {
+public class PlayerBehavior : MonoBehaviour{
 
     private Rigidbody2D rb2D;
     private float MoveSpeed = 10f; //The speed at which it accelerate
@@ -29,7 +29,20 @@ public class PlayerBehavior : MonoBehaviour
         score = 0;
     }
 
-    // Update is called once per frame
+     /*  Function: Update
+        
+        Get Inputs to control falling star
+
+        Inputs: 
+
+            * Keyboard.
+                * Left - Q
+                * Right - D
+
+            * MyoArm Band.
+                * Left - WaveIn
+                * Right - WaveOut       
+    */
     void FixedUpdate(){
 
         #if UNITY_STANDALONE || UNITY_EDITOR || UNITY_ANDROID || WIN64 || WIN32
@@ -76,11 +89,19 @@ public class PlayerBehavior : MonoBehaviour
 
     }
 
-    
+    /*  Function: OnTriggerExit2D
+        
+        Add score each times ball pass through platform collider area
+
+        Parameters:
+
+            area - Platform collider trigger area.
+    */
     private void OnTriggerExit2D(Collider2D area){
         //Each time the player passes between two plateform adds one to the number of floor
         if(area.tag == "CameraTrigger"){
             score++;
         }
     }
+}
 }

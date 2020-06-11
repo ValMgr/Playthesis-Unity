@@ -2,21 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WorldGen : MonoBehaviour
-{
+namespace Seiko {
+public class WorldGen : MonoBehaviour{
 
-    //Each "Ground" Object is a prefab. This prefab is set in the Inspector
+    // Group: Platform Prefabs
     public GameObject Ground1;
     public GameObject Ground2;
     public GameObject Ground3;
 
-    //The Space there is between each floor
+    // Group: Variables
     public float floorOffset = 3.2f; 
-
-    // Number of how many floor has been instantiate
     private int yOffset = 0; 
 
-    // Start is called before the first frame update
+    // Group: Functions
+    /* Function: Start
+
+        Instantiate 10 platforms instantly
+
+    */
     void Start(){
         // Instantiate 10 platforms to start
         for (int i=0;i<10;i++){
@@ -24,10 +27,12 @@ public class WorldGen : MonoBehaviour
         }
     }
 
+    
+     /* Function: NewPlatform
 
+        Instantiate a new platform with a random prefab
 
-
-    // Instantiate a new platform with a random prefab
+    */
     public void NewPlatform(){
 
             //Random Number who choose which "Ground" Prefab to use.
@@ -62,4 +67,5 @@ public class WorldGen : MonoBehaviour
         }
             
      
+}
 }

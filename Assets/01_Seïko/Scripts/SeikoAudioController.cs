@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SeikoAudioController : MonoBehaviour
-{
+namespace Seiko {
+public class SeikoAudioController : MonoBehaviour{
     private AudioSource AudioSource;
     private bool VolumeOn = true;
 
@@ -12,16 +12,18 @@ public class SeikoAudioController : MonoBehaviour
         AudioSource = GetComponent<AudioSource>();
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.M))
-        {
+     /* Function: Update
+
+        Mute sound with M
+
+    */
+    void Update(){
+        if (Input.GetKeyDown(KeyCode.M)){
             VolumeOn = !VolumeOn;
         }
 
 
-        if (VolumeOn)
-        {
+        if (VolumeOn){
             AudioSource.volume = 0.5f;
         }
         else
@@ -29,4 +31,5 @@ public class SeikoAudioController : MonoBehaviour
             AudioSource.volume = 0;
         }
     }
+}
 }

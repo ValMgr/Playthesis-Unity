@@ -34,6 +34,10 @@ public class HookBehaviour : MonoBehaviour{
         score = GameObject.Find("Score").GetComponent<ScoreManager>();
     }
 
+     /* Function: Update
+
+        If Z pressed, call <ResetHook> with "sucess" arguments.
+     */
     private void Update(){
 
         // Delete Gameobject if throw failed       
@@ -61,7 +65,6 @@ public class HookBehaviour : MonoBehaviour{
       /* Function: FindTarget
 
         Bait closest fish.
-
 
      */
     private void FindTarget(){
@@ -117,9 +120,10 @@ public class HookBehaviour : MonoBehaviour{
 
       /* Function: BaitFish
 
-        // Coroutines when a fish has been hook
-            // 5s Timer before call end coroutines with a "failed" argument
-            // and change rod light to blue
+        Basic coroutines when a fish has been hook.
+        If timer end, call <ResetHook> with "failed" arguments.
+        
+        - Change rod light to blue.
      */
    
     private IEnumerator BaitFish(){
@@ -135,6 +139,20 @@ public class HookBehaviour : MonoBehaviour{
 
     }
 
+
+    /* Function: ResetHook
+
+        Basic coroutines to reset hook if a fish has been catched or missed.
+
+        Change rod light :
+
+            - Green: Succes
+            - Red: Fail
+
+        Parameters:
+
+        succes - Boolean
+     */
     // Coroutines to reset hook 
     // Display status color corresponding then delete hook / fish, or release fish if status is failed
     // changing rod light to green if succes or red if failed

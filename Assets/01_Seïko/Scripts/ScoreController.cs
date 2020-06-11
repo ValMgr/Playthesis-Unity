@@ -3,18 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ScoreController : MonoBehaviour
-{
+namespace Seiko {
+public class ScoreController : MonoBehaviour{
     private Text Score;
-    // Start is called before the first frame update
-    void Start()
-    {
+
+    /*  Function: Start
+        
+        Get Score Text GameObject
+    */
+    void Start(){
         Score = GetComponent<Text>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
+    /*  Function: Update
+        
+        Update Score Text with <PlayerBehavior.score>
+    */
+    void Update(){
 
         // Script which set the Highest score of the player
         Score.text = PlayerBehavior.score.ToString();
@@ -28,4 +33,5 @@ public class ScoreController : MonoBehaviour
             PlayerPrefs.SetInt("ScoreSeiko", PlayerBehavior.score);
         }
     }
+}
 }

@@ -11,6 +11,8 @@ using System.Collections.Generic;
 
 using LockingPolicy = Thalmic.Myo.LockingPolicy;
 
+namespace Thalmic.Myo{
+
 // Allows access to one or more Myo armbands, which must be immediate children of the GameObject this script is attached
 // to. ThalmicHub is a singleton; only one ThalmicHub instance is allowed in a scene, which can be accessed through
 // ThalmicHub.instance. ThalmicHub will persist across scene changes.
@@ -159,6 +161,7 @@ public class ThalmicHub : MonoBehaviour
     private Thalmic.Myo.Hub _hub = null;
 
     private List<ThalmicMyo> _myos = new List<ThalmicMyo>();
+}
 }
 
 #endif

@@ -9,6 +9,7 @@ using Pose = Thalmic.Myo.Pose;
 using UnlockType = Thalmic.Myo.UnlockType;
 using VibrationType = Thalmic.Myo.VibrationType;
 
+namespace Thalmic.Myo{
 public class GetInput : MonoBehaviour {
 
     public GameObject myo;
@@ -50,6 +51,7 @@ public class GetInput : MonoBehaviour {
     }
 
 
+}
 }
 
 #endif
